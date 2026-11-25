@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plan de matemáticas · 6 semanas</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#eef2f7;--grid:#d5dde8;--card:#fff;--ink:#14213d;--mute:#5b6a82;--line:#c9d3df;--hl:#f6d55c;--hlink:#14213d;--blue:#3b6fd4;--ok:#2a9d6b;--pend:#dfe5ee;--run:#8fb0f0;--chip:#e3e9f2}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1626;--grid:#1a2640;--card:#16213a;--ink:#e8edf6;--mute:#93a2bd;--line:#2c3b5c;--hl:#e0b93a;--hlink:#0e1626;--blue:#7ea3f2;--ok:#3cc08a;--pend:#2a3855;--run:#4a72c4;--chip:#22304d}}
+:root[data-theme="dark"]{--bg:#0e1626;--grid:#1a2640;--card:#16213a;--ink:#e8edf6;--mute:#93a2bd;--line:#2c3b5c;--hl:#e0b93a;--hlink:#0e1626;--blue:#7ea3f2;--ok:#3cc08a;--pend:#2a3855;--run:#4a72c4;--chip:#22304d}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px;color:var(--ink);font:400 16px/1.5 "Bricolage Grotesque",system-ui,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 56px}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.05;margin:0 0 4px;font-weight:800;letter-spacing:-.02em}
+h1 mark{background:var(--hl);color:var(--hlink);padding:0 .15em}
+.sub{color:var(--mute);margin:0 0 20px}
+.top{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;background:var(--card);border:2px solid var(--ink);padding:18px;margin-bottom:16px}
+.ring{position:relative;width:120px;height:120px}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:28px;font-weight:800}
+.stats{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:6px}
+.stats span{color:var(--mute)}.stats strong{color:var(--ink);font-size:20px}
+.map{display:grid;grid-template-columns:auto repeat(6,minmax(0,1fr));gap:4px;margin-top:12px;align-items:center;font-size:12px;color:var(--mute)}
+.map button{height:26px;border:0;cursor:pointer;background:var(--pend)}
+.map .s1{background:var(--run)}.map .s2{background:var(--ok)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;align-items:center}
+.lbl{color:var(--mute);font-size:14px;min-width:70px}
+.chip{font:inherit;border:1.5px solid var(--line);background:var(--card);color:var(--ink);padding:6px 12px;cursor:pointer;border-radius:999px}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip small{opacity:.7;margin-left:6px}
+.wk{position:relative;padding-bottom:10px;overflow:hidden}
+.wk i{position:absolute;left:0;bottom:0;height:4px;background:var(--ok)}
+input[type=search]{font:inherit;flex:1;min-width:180px;padding:8px 12px;border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px;margin-top:14px}
+.card{background:var(--card);border:1.5px solid var(--line);border-top:6px solid var(--pend);padding:14px;display:flex;flex-direction:column;gap:10px}
+.card.s1{border-top-color:var(--run)}.card.s2{border-top-color:var(--ok)}
+.card.hit{outline:3px solid var(--hl)}
+.meta{display:flex;justify-content:space-between;gap:8px;color:var(--mute);font-size:13px}
+.card h3{margin:0;font-size:19px;line-height:1.2}
+.ex{background:var(--chip);padding:8px 10px;font-size:15px}
+.ans{font-size:15px}.ans button{font:inherit;border:1.5px dashed var(--mute);background:none;color:var(--ink);padding:4px 10px;cursor:pointer}
+.ans b{background:var(--hl);color:var(--hlink);padding:2px 8px}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.links a,.links span{font-size:14px;padding:6px 10px;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink)}
+.links a:hover{background:var(--hl);color:var(--hlink)}
+.links span{border-color:var(--line);color:var(--mute)}
+.seg{display:grid;grid-template-columns:repeat(3,1fr)}
+.seg button{font:inherit;font-size:14px;padding:6px 2px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;margin-left:-1.5px}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.dif{display:flex;gap:6px;align-items:center;font-size:14px;color:var(--mute)}
+.dif button{font:inherit;font-size:13px;border:1.5px solid var(--line);background:none;color:var(--ink);padding:2px 9px;cursor:pointer;border-radius:999px}
+.dif button[aria-pressed=true]{background:var(--hl);color:var(--hlink);border-color:var(--hl)}
+textarea{font:inherit;font-size:14px;width:100%;min-height:52px;padding:8px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);resize:vertical}
+.empty{grid-column:1/-1;text-align:center;padding:40px;color:var(--mute)}
+.foot{display:flex;justify-content:space-between;margin-top:24px;color:var(--mute);font-size:14px}
+.foot button{font:inherit;background:none;border:0;color:var(--mute);text-decoration:underline;cursor:pointer}
+@media(max-width:560px){.top{grid-template-columns:1fr;justify-items:center;text-align:center}.stats{justify-content:center}.map{width:100%}}
+</style></head><body><main>
+<h1>Plan de matemáticas: <mark>6 semanas</mark></h1>
+<p class="sub">De aritmética a matemática para negocios. Marca tu avance, anota dudas y repasa con Khan Academy.</p>
+<section class="top" aria-label="Progreso">
+ <div class="ring"><svg viewBox="0 0 120 120" width="120" height="120"><circle cx="60" cy="60" r="50" fill="none" stroke="var(--pend)" stroke-width="14"/><circle id="arc" cx="60" cy="60" r="50" fill="none" stroke="var(--ok)" stroke-width="14" stroke-dasharray="314.16" stroke-dashoffset="314.16" transform="rotate(-90 60 60)" style="transition:stroke-dashoffset .5s"/></svg><b id="pct">0%</b></div>
+ <div><div class="stats" id="stats"></div>
+ <div class="map" id="map" aria-label="Mapa de semanas y días"></div></div>
+</section>
+<div class="row"><span class="lbl">Semana</span><span id="fw" class="row" style="margin:0"></span></div>
+<div class="row"><span class="lbl">Día</span><span id="fd" class="row" style="margin:0"></span></div>
+<div class="row"><span class="lbl">Estado</span><span id="fs" class="row" style="margin:0"></span>
+ <input type="search" id="q" placeholder="Buscar tema o ejercicio" aria-label="Buscar"></div>
+<div class="grid" id="cards"></div>
+<div class="foot"><span id="cnt"></span><button id="rst">Borrar mi progreso</button></div>
+</main>
+<script>
+const D=[{"Semana": "1", "Tema semanal": "Aritmética y porcentajes", "Día": "Lunes", "Tema diario": "Operaciones combinadas y orden de operaciones", "Enlace Khan Academy": "https://es.khanacademy.org/math/arithmetic", "Video o búsqueda de apoyo": "https://www.youtube.com/watch?v=Qu8x5ZO0sIg", "Ejercicio práctico": "8 + 3 × (12 - 4) ÷ 2", "Respuesta / meta": "20", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "1", "Tema semanal": "Aritmética y porcentajes", "Día": "Martes", "Tema diario": "Números negativos y regla de signos", "Enlace Khan Academy": "https://es.khanacademy.org/math/arithmetic", "Video o búsqueda de apoyo": "Buscar: números negativos Khan Academy español", "Ejercicio práctico": "(-7) × (-3) + (-10)", "Respuesta / meta": "11", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "1", "Tema semanal": "Aritmética y porcentajes", "Día": "Miércoles", "Tema diario": "Fracciones: operaciones básicas", "Enlace Khan Academy": "https://es.khanacademy.org/math/arithmetic/fraction-arithmetic", "Video o búsqueda de apoyo": "https://www.youtube.com/watch?v=-MwgrpO-iG8", "Ejercicio práctico": "3/4 + 2/5", "Respuesta / meta": "23/20 = 1,15", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "1", "Tema semanal": "Aritmética y porcentajes", "Día": "Jueves", "Tema diario": "Fracciones con denominadores distintos", "Enlace Khan Academy": "https://es.khanacademy.org/math/arithmetic/fraction-arithmetic", "Video o búsqueda de apoyo": "https://www.youtube.com/watch?v=LntlkhzYu84", "Ejercicio práctico": "3/4 ÷ 2/5", "Respuesta / meta": "15/8 = 1,875", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "1", "Tema semanal": "Aritmética y porcentajes", "Día": "Viernes", "Tema diario": "Porcentajes, aumentos y descuentos", "Enlace Khan Academy": "https://es.khanacademy.org/math/aritmetica-pe-pre-u/xce51e392da300f11:porcentajes", "Video o búsqueda de apoyo": "https://www.youtube.com/watch?v=uslT7tsbPnk", "Ejercicio práctico": "Precio $250.000 con 18% descuento y 19% IVA", "Respuesta / meta": "$243.950", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "1", "Tema semanal": "Aritmética y porcentajes", "Día": "Sábado", "Tema diario": "Repaso y evaluación", "Enlace Khan Academy": "https://es.khanacademy.org/kmap/numbers-and-operations-h/no224-fractions-decimals-percentages", "Video o búsqueda de apoyo": "Repetir videos difíciles", "Ejercicio práctico": "20 ejercicios mezclados", "Respuesta / meta": "Meta: 15/20 correctas", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "2", "Tema semanal": "Álgebra básica", "Día": "Lunes", "Tema diario": "Variables y lenguaje algebraico", "Enlace Khan Academy": "https://es.khanacademy.org/math/algebra-basics/basic-alg-foundations", "Video o búsqueda de apoyo": "Buscar: lenguaje algebraico Matemáticas con Juan", "Ejercicio práctico": "Traducir: el doble de un número más 5", "Respuesta / meta": "2x + 5", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "2", "Tema semanal": "Álgebra básica", "Día": "Martes", "Tema diario": "Potencias, raíces y exponentes", "Enlace Khan Academy": "https://es.khanacademy.org/math/algebra-basics/basic-alg-foundations", "Video o búsqueda de apoyo": "Buscar: potencias y raíces Julio Ríos", "Ejercicio práctico": "Simplificar 3x² + 2x² - x", "Respuesta / meta": "5x² - x", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "2", "Tema semanal": "Álgebra básica", "Día": "Miércoles", "Tema diario": "Propiedad distributiva y términos semejantes", "Enlace Khan Academy": "https://es.khanacademy.org/math/get-ready-for-algebra-i", "Video o búsqueda de apoyo": "Buscar: propiedad distributiva Matemáticas profe Alex", "Ejercicio práctico": "Simplificar 3(2x - 4) + 5x", "Respuesta / meta": "11x - 12", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "2", "Tema semanal": "Álgebra básica", "Día": "Jueves", "Tema diario": "Sustitución y evaluación de expresiones", "Enlace Khan Academy": "https://es.khanacademy.org/math/get-ready-for-algebra-i", "Video o búsqueda de apoyo": "Buscar: evaluar expresiones algebraicas Khan Academy español", "Ejercicio práctico": "Evaluar 2x + 3y con x=4, y=-2", "Respuesta / meta": "2", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "2", "Tema semanal": "Álgebra básica", "Día": "Viernes", "Tema diario": "Factor común", "Enlace Khan Academy": "https://es.khanacademy.org/math/algebra", "Video o búsqueda de apoyo": "Buscar: factor común Julio Ríos", "Ejercicio práctico": "Factorizar 4x² + 8x", "Respuesta / meta": "4x(x + 2)", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "2", "Tema semanal": "Álgebra básica", "Día": "Sábado", "Tema diario": "Repaso y evaluación", "Enlace Khan Academy": "https://es.khanacademy.org/math/algebra-basics/basic-alg-foundations", "Video o búsqueda de apoyo": "Repetir ejercicios de expresiones", "Ejercicio práctico": "20 ejercicios mezclados", "Respuesta / meta": "Meta: 15/20 correctas", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "3", "Tema semanal": "Ecuaciones y desigualdades", "Día": "Lunes", "Tema diario": "Ecuaciones sencillas", "Enlace Khan Academy": "https://es.khanacademy.org/math/algebra/x2f8bb11595b61c86:solve-equations-inequalities", "Video o búsqueda de apoyo": "Buscar: ecuaciones de primer grado Matemáticas con Juan", "Ejercicio práctico": "Resolver x + 8 = 20", "Respuesta / meta": "x = 12", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "3", "Tema semanal": "Ecuaciones y desigualdades", "Día": "Martes", "Tema diario": "Ecuaciones de dos pasos", "Enlace Khan Academy": "https://es.khanacademy.org/math/algebra/x2f8bb11595b61c86:solve-equations-inequalities", "Video o búsqueda de apoyo": "Buscar: ecuaciones de primer grado Matemáticas profe Alex", "Ejercicio práctico": "Resolver 3x - 7 = 20", "Respuesta / meta": "x = 9", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "3", "Tema semanal": "Ecuaciones y desigualdades", "Día": "Miércoles", "Tema diario": "Variables en ambos lados", "Enlace Khan Academy": "https://es.khanacademy.org/math/algebra/x2f8bb11595b61c86:solve-equations-inequalities", "Video o búsqueda de apoyo": "Buscar: ecuaciones con variables en ambos lados Khan Academy español", "Ejercicio práctico": "Resolver 5x + 3 = 2x + 18", "Respuesta / meta": "x = 5", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "3", "Tema semanal": "Ecuaciones y desigualdades", "Día": "Jueves", "Tema diario": "Ecuaciones con fracciones y decimales", "Enlace Khan Academy": "https://es.khanacademy.org/math/algebra/x2f8bb11595b61c86:solve-equations-inequalities", "Video o búsqueda de apoyo": "Buscar: ecuaciones con fracciones Julio Ríos", "Ejercicio práctico": "Resolver 0,4x + 8 = 20", "Respuesta / meta": "x = 30", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "3", "Tema semanal": "Ecuaciones y desigualdades", "Día": "Viernes", "Tema diario": "Desigualdades lineales", "Enlace Khan Academy": "https://es.khanacademy.org/math/algebra/x2f8bb11595b61c86:solve-equations-inequalities", "Video o búsqueda de apoyo": "Buscar: desigualdades lineales Khan Academy español", "Ejercicio práctico": "Resolver 2x - 5 > 9", "Respuesta / meta": "x > 7", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "3", "Tema semanal": "Ecuaciones y desigualdades", "Día": "Sábado", "Tema diario": "Problemas verbales y repaso", "Enlace Khan Academy": "https://es.khanacademy.org/math/algebra", "Video o búsqueda de apoyo": "Repetir problemas de ecuaciones", "Ejercicio práctico": "Punto de equilibrio: $35.000 por unidad, costos fijos $800.000, variable $15.000", "Respuesta / meta": "40 camisetas", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "4", "Tema semanal": "Funciones, gráficas y sistemas", "Día": "Lunes", "Tema diario": "Plano cartesiano y tablas", "Enlace Khan Academy": "https://es.khanacademy.org/math/algebra", "Video o búsqueda de apoyo": "Buscar: plano cartesiano Khan Academy español", "Ejercicio práctico": "Tabla para y = 2x + 1", "Respuesta / meta": "(-1,-1), (0,1), (1,3), (2,5)", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "4", "Tema semanal": "Funciones, gráficas y sistemas", "Día": "Martes", "Tema diario": "Función lineal, pendiente e intercepto", "Enlace Khan Academy": "https://es.khanacademy.org/math/algebra", "Video o búsqueda de apoyo": "https://www.youtube.com/watch?v=ySoiX8Tmdyw", "Ejercicio práctico": "Identificar pendiente e intercepto de y = 3x - 5", "Respuesta / meta": "Pendiente 3; intercepto -5", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "4", "Tema semanal": "Funciones, gráficas y sistemas", "Día": "Miércoles", "Tema diario": "Graficar funciones lineales", "Enlace Khan Academy": "https://es.khanacademy.org/math/algebra", "Video o búsqueda de apoyo": "https://www.youtube.com/watch?v=DjmKq9zQuco", "Ejercicio práctico": "Graficar y = 2x + 4", "Respuesta / meta": "Pasa por (0,4) y (1,6)", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "4", "Tema semanal": "Funciones, gráficas y sistemas", "Día": "Jueves", "Tema diario": "Interpretar gráficas de costo e ingreso", "Enlace Khan Academy": "https://es.khanacademy.org/math/algebra", "Video o búsqueda de apoyo": "Buscar: función costo ingreso beneficio gráfica", "Ejercicio práctico": "Identificar cuándo ingresos superan costos", "Respuesta / meta": "Punto de equilibrio", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "4", "Tema semanal": "Funciones, gráficas y sistemas", "Día": "Viernes", "Tema diario": "Sistemas por sustitución", "Enlace Khan Academy": "https://es.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations", "Video o búsqueda de apoyo": "https://www.youtube.com/watch?v=jbqEnUa9l90", "Ejercicio práctico": "Resolver x + y = 10; 2x - y = 5", "Respuesta / meta": "x = 5; y = 5", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "4", "Tema semanal": "Funciones, gráficas y sistemas", "Día": "Sábado", "Tema diario": "Sistemas por eliminación y problemas", "Enlace Khan Academy": "https://es.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations", "Video o búsqueda de apoyo": "https://www.youtube.com/watch?v=cgn70jzcFmg", "Ejercicio práctico": "Cuadernos $8.000 y lápices $2.000; 30 artículos; $160.000", "Respuesta / meta": "20 cuadernos; 10 lápices", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "5", "Tema semanal": "Matemática para negocios", "Día": "Lunes", "Tema diario": "Variación porcentual e inflación", "Enlace Khan Academy": "https://es.khanacademy.org/math/aritmetica-pe-pre-u/xce51e392da300f11:porcentajes", "Video o búsqueda de apoyo": "https://www.youtube.com/watch?v=uslT7tsbPnk", "Ejercicio práctico": "Ventas de $400 millones a $520 millones", "Respuesta / meta": "30%", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "5", "Tema semanal": "Matemática para negocios", "Día": "Martes", "Tema diario": "Razones, proporciones y escalas", "Enlace Khan Academy": "https://es.khanacademy.org/math/arithmetic", "Video o búsqueda de apoyo": "Buscar: proporciones Khan Academy español", "Ejercicio práctico": "Resolver proporciones sencillas", "Respuesta / meta": "Completar 10 ejercicios", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "5", "Tema semanal": "Matemática para negocios", "Día": "Miércoles", "Tema diario": "Interés simple", "Enlace Khan Academy": "Buscar en Khan Academy: interés simple", "Video o búsqueda de apoyo": "https://www.youtube.com/watch?v=84crhAlLFzc", "Ejercicio práctico": "Interés de $1.000.000 al 8% anual por 3 años", "Respuesta / meta": "$240.000", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "5", "Tema semanal": "Matemática para negocios", "Día": "Jueves", "Tema diario": "Interés compuesto", "Enlace Khan Academy": "Buscar en Khan Academy: interés compuesto", "Video o búsqueda de apoyo": "https://www.youtube.com/watch?v=0B2Ztp15TaA", "Ejercicio práctico": "Valor final de $1.000.000 al 8% anual por 3 años", "Respuesta / meta": "$1.259.712", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "5", "Tema semanal": "Matemática para negocios", "Día": "Viernes", "Tema diario": "Tablas, gráficas y lectura de datos", "Enlace Khan Academy": "https://es.khanacademy.org/math/algebra", "Video o búsqueda de apoyo": "https://www.youtube.com/watch?v=hifNPUhnUec", "Ejercicio práctico": "Interpretar una gráfica de ventas", "Respuesta / meta": "Completar 10 ejercicios", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "5", "Tema semanal": "Matemática para negocios", "Día": "Sábado", "Tema diario": "Evaluación aplicada", "Enlace Khan Academy": "https://es.khanacademy.org/kmap/numbers-and-operations-h/no224-fractions-decimals-percentages", "Video o búsqueda de apoyo": "Repetir videos de interés y porcentajes", "Ejercicio práctico": "15 problemas de negocios", "Respuesta / meta": "Meta: 11/15 correctas", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "6", "Tema semanal": "Repaso y simulacro", "Día": "Lunes", "Tema diario": "Aritmética, fracciones y porcentajes", "Enlace Khan Academy": "https://es.khanacademy.org/math/arithmetic", "Video o búsqueda de apoyo": "Repetir videos de la semana 1", "Ejercicio práctico": "25 ejercicios cronometrados", "Respuesta / meta": "Meta: 19/25 correctas", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "6", "Tema semanal": "Repaso y simulacro", "Día": "Martes", "Tema diario": "Álgebra y ecuaciones", "Enlace Khan Academy": "https://es.khanacademy.org/math/get-ready-for-algebra-i", "Video o búsqueda de apoyo": "Repetir videos de las semanas 2 y 3", "Ejercicio práctico": "20 ejercicios", "Respuesta / meta": "Meta: 15/20 correctas", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "6", "Tema semanal": "Repaso y simulacro", "Día": "Miércoles", "Tema diario": "Funciones, gráficas y sistemas", "Enlace Khan Academy": "https://es.khanacademy.org/math/algebra", "Video o búsqueda de apoyo": "Repetir videos de la semana 4", "Ejercicio práctico": "15 ejercicios y 2 problemas", "Respuesta / meta": "Meta: 11/15 correctas", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "6", "Tema semanal": "Repaso y simulacro", "Día": "Jueves", "Tema diario": "Porcentajes e interés", "Enlace Khan Academy": "https://es.khanacademy.org/math/aritmetica-pe-pre-u/xce51e392da300f11:porcentajes", "Video o búsqueda de apoyo": "Repetir videos de la semana 5", "Ejercicio práctico": "15 problemas financieros", "Respuesta / meta": "Meta: 11/15 correctas", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "6", "Tema semanal": "Repaso y simulacro", "Día": "Viernes", "Tema diario": "Simulacro general", "Enlace Khan Academy": "Repasar todas las unidades", "Video o búsqueda de apoyo": "No ver videos antes", "Ejercicio práctico": "30 ejercicios en 90 minutos", "Respuesta / meta": "Meta: 22/30 correctas", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}, {"Semana": "6", "Tema semanal": "Repaso y simulacro", "Día": "Sábado", "Tema diario": "Análisis de errores", "Enlace Khan Academy": "Volver solo a unidades falladas", "Video o búsqueda de apoyo": "Repetir videos de temas fallados", "Ejercicio práctico": "Repetir ejercicios fallados", "Respuesta / meta": "Meta: 100% de errores corregidos", "Estado": "Pendiente", "Nota de estudio": "", "Dificultad": ""}];
+const DAYS=["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"],ST=["Pendiente","En curso","Hecho"],DF=["Fácil","Media","Difícil"];
+let S={};try{S=JSON.parse(localStorage.getItem("pm26")||"{}")}catch(e){}
+const save=()=>{try{localStorage.setItem("pm26",JSON.stringify(S))}catch(e){}};
+const g=i=>S[i]||(S[i]={s:0,d:-1,n:"",r:0});
+let F={w:0,d:"",s:-1,q:""},hit=-1;
+const $=id=>document.getElementById(id);
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function link(v,kind){
+ if(/^https?:\/\//.test(v))return `<a href="${esc(v)}" target="_blank" rel="noopener">${kind==="k"?"Khan Academy":"Ver video"}</a>`;
+ let m=v.match(/^Buscar(?: en Khan Academy)?:\s*(.+)$/);
+ if(m){const q=encodeURIComponent(m[1]);
+  return kind==="k"?`<a href="https://es.khanacademy.org/search?page_search_query=${q}" target="_blank" rel="noopener">Buscar en Khan</a>`
+  :`<a href="https://www.youtube.com/results?search_query=${q}" target="_blank" rel="noopener">Buscar en YouTube</a>`}
+ return `<span>${esc(v)}</span>`}
+const weeks=[...new Set(D.map(r=>+r.Semana))];
+const wName=w=>D.find(r=>+r.Semana===w)["Tema semanal"];
+function stats(){
+ const n=D.length,c=[0,0,0];D.forEach((r,i)=>c[g(i).s]++);
+ const p=Math.round(c[2]/n*100);$("pct").textContent=p+"%";$("arc").style.strokeDashoffset=314.16*(1-c[2]/n);
+ $("stats").innerHTML=`<span><strong>${c[2]}</strong> hechas</span><span><strong>${c[1]}</strong> en curso</span><span><strong>${c[0]}</strong> pendientes</span>`;
+ let h='<span></span>'+DAYS.map(d=>`<span style="text-align:center">${d.slice(0,3)}</span>`).join("");
+ weeks.forEach(w=>{h+=`<span>S${w}</span>`;DAYS.forEach(d=>{const i=D.findIndex(r=>+r.Semana===w&&r.Día===d);
+  h+=i<0?"<span></span>":`<button class="s${g(i).s}" data-go="${i}" title="Semana ${w}, ${d}: ${esc(D[i]["Tema diario"])} (${ST[g(i).s]})" aria-label="Semana ${w}, ${d}: ${ST[g(i).s]}"></button>`})});
+ $("map").innerHTML=h;
+}
+function filters(){
+ $("fw").innerHTML=[0,...weeks].map(w=>{const t=D.filter(r=>!w||+r.Semana===w),dn=D.filter((r,i)=>(!w||+r.Semana===w)&&g(i).s===2).length;
+  return `<button class="chip wk" aria-pressed="${F.w===w}" data-w="${w}">${w?"S"+w+" · "+esc(wName(w)):"Todas"}<i style="width:${dn/t.length*100}%"></i></button>`}).join("");
+ $("fd").innerHTML=["",...DAYS].map(d=>`<button class="chip" aria-pressed="${F.d===d}" data-d="${d}">${d||"Todos"}</button>`).join("");
+ $("fs").innerHTML=[-1,0,1,2].map(s=>`<button class="chip" aria-pressed="${F.s===s}" data-s="${s}">${s<0?"Todos":ST[s]}</button>`).join("");
+}
+function cards(){
+ const q=F.q.toLowerCase();let n=0;
+ const h=D.map((r,i)=>{const x=g(i);
+  if((F.w&&+r.Semana!==F.w)||(F.d&&r.Día!==F.d)||(F.s>=0&&x.s!==F.s))return"";
+  if(q&&!(r["Tema diario"]+r["Ejercicio práctico"]+r["Tema semanal"]).toLowerCase().includes(q))return"";
+  n++;
+  return `<article class="card s${x.s}${hit===i?" hit":""}" id="c${i}">
+  <div class="meta"><span>Semana ${r.Semana} · ${esc(r["Tema semanal"])}</span><b>${r.Día}</b></div>
+  <h3>${esc(r["Tema diario"])}</h3>
+  <div class="ex">${esc(r["Ejercicio práctico"])}</div>
+  <div class="ans">${x.r?`<b>${esc(r["Respuesta / meta"])}</b>`:`<button data-i="${i}" data-a="r">Ver respuesta o meta</button>`}</div>
+  <div class="links">${link(r["Enlace Khan Academy"],"k")}${link(r["Video o búsqueda de apoyo"],"v")}</div>
+  <div class="seg">${ST.map((t,k)=>`<button data-i="${i}" data-a="s" data-v="${k}" aria-pressed="${x.s===k}">${t}</button>`).join("")}</div>
+  <div class="dif">Dificultad ${DF.map((t,k)=>`<button data-i="${i}" data-a="d" data-v="${k}" aria-pressed="${x.d===k}">${t}</button>`).join("")}</div>
+  <textarea data-i="${i}" data-a="n" placeholder="Nota de estudio" aria-label="Nota de estudio">${esc(x.n)}</textarea></article>`}).join("");
+ $("cards").innerHTML=h||'<div class="empty">Ninguna actividad coincide. Cambia los filtros o la búsqueda.</div>';
+ $("cnt").textContent=n+" de "+D.length+" actividades";
+}
+const all=()=>{stats();filters();cards()};
+document.addEventListener("click",e=>{
+ const b=e.target.closest("button");if(!b)return;const d=b.dataset;
+ if(d.w!==undefined){F.w=+d.w;hit=-1;all()}
+ else if(d.d!==undefined){F.d=d.d;hit=-1;all()}
+ else if(d.s!==undefined){F.s=+d.s;all()}
+ else if(d.go!==undefined){const i=+d.go;F={w:0,d:"",s:-1,q:""};$("q").value="";hit=i;all();$("c"+i).scrollIntoView({behavior:"smooth",block:"center"})}
+ else if(d.a){const x=g(+d.i);
+  if(d.a==="r")x.r=1;
+  if(d.a==="s")x.s=+d.v;
+  if(d.a==="d")x.d=x.d===+d.v?-1:+d.v;
+  save();all()}
+ else if(b.id==="rst"&&confirm("¿Borrar todo tu progreso y tus notas?")){S={};save();all()}
+});
+document.addEventListener("input",e=>{
+ if(e.target.id==="q"){F.q=e.target.value;cards()}
+ else if(e.target.dataset.a==="n"){g(+e.target.dataset.i).n=e.target.value;save()}
+});
+all();
+</script></body></html>
